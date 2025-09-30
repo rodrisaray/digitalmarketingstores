@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rodrisa Ray Digital Marketing</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<!-- Anime.js -->
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+
+<!-- Canvas Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<!-- Custom CSS -->
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif;}
+  body{background:#111;color:#fff;overflow-x:hidden;}
+  #particles-js{position:fixed;width:100%;height:100%;z-index:-1;}
+  nav{position:sticky;top:0;width:100%;background:rgba(0,0,0,0.85);display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;z-index:10;flex-wrap:wrap;}
+  nav a{color:#fff;text-decoration:none;margin:0 1rem;font-weight:bold;transition:0.3s;}
+  nav a:hover{color:#0ff;}
+  .hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 2rem;}
+  .hero h1{font-size:3rem;background:linear-gradient(90deg,#ff00ff,#00ffff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:glow 2s infinite alternate;}
+  @keyframes glow{0%{text-shadow:0 0 5px #ff00ff,0 0 10px #00ffff;}100%{text-shadow:0 0 20px #ff00ff,0 0 40px #00ffff;}}
+  .hero p{margin-top:1rem;font-size:1.2rem;}
+  .hero .cta{margin-top:2rem;padding:1rem 2rem;border:none;cursor:pointer;font-size:1.2rem;background:linear-gradient(90deg,#ff00ff,#00ffff);color:#fff;border-radius:10px;box-shadow:0 0 20px #ff00ff,0 0 40px #00ffff;transition:0.3s;}
+  .hero .cta:hover{transform:scale(1.05);box-shadow:0 0 40px #ff00ff,0 0 60px #00ffff;}
+  section{padding:5rem 2rem;opacity:0;transform:translateY(50px);transition:all 0.8s ease-out;}
+  section.visible{opacity:1;transform:translateY(0);}
+  .about{background: rgba(255,255,255,0.05);border-radius:15px;padding:2rem;}
+  .services{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;}
+  .service{background: rgba(255,255,255,0.05);padding:2rem;border-radius:15px;width:250px;text-align:center;transition: transform 0.3s;}
+  .service:hover{transform:translateY(-10px);}
+  .service i{font-size:2.5rem;margin-bottom:1rem;color:#0ff;}
+  .portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
+  .portfolio img{width:100%;border-radius:15px;transition: transform 0.3s;}
+  .portfolio img:hover{transform:scale(1.05);}
+  .testimonials{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;}
+  .testimonial{background: rgba(255,255,255,0.05);padding:2rem;border-radius:15px;width:300px;text-align:center;}
+  .pricing{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;}
+  .pricing-card{background: rgba(255,255,255,0.05);padding:2rem;border-radius:15px;width:250px;text-align:center;transition: transform 0.3s;}
+  .pricing-card:hover{transform:translateY(-10px);}
+  .pricing-card button{margin-top:1rem;padding:0.8rem 1.5rem;border:none;border-radius:10px;background:linear-gradient(90deg,#ff00ff,#00ffff);color:#fff;cursor:pointer;}
+  .socials{display:flex;gap:1rem;justify-content:center;margin-top:2rem;}
+  .socials a{position: relative;color:#fff;font-size:1.5rem;transition:0.3s;}
+  .socials a:hover{color:#0ff;}
+  .socials a::after{content:'✨';position:absolute;top:-10px;left:50%;transform:translateX(-50%) scale(0);opacity:0;transition:0.3s;}
+  .socials a:hover::after{transform:translateX(-50%) scale(1);opacity:1;}
+  form{display:flex;flex-direction:column;gap:1rem;max-width:500px;margin:0 auto;}
+  form input, form textarea{padding:1rem;border-radius:10px;border:none;outline:none;}
+  form button{padding:1rem;border:none;border-radius:10px;background:linear-gradient(90deg,#ff00ff,#00ffff);color:#fff;cursor:pointer;}
+  iframe{width:100%;border:none;border-radius:15px;margin-top:2rem;}
+  footer{text-align:center;padding:2rem;background: rgba(0,0,0,0.8);margin-top:5rem;}
+  @media(max-width:768px){ nav{flex-direction:column;gap:1rem;} .services,.testimonials,.pricing,.portfolio{flex-direction:column;} }
+</style>
+</head>
+<body>
+
+<!-- Particles.js -->
+<div id="particles-js"></div>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo"><a href="#home">Rodrisa Ray</a></div>
+  <div class="menu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <h1>Rodrisa Ray Digital Marketing</h1>
+  <p>Empowering youth with smart marketing, tech skills, and creativity.</p>
+  <button class="cta" onclick="document.getElementById('buy').scrollIntoView({behavior:'smooth'})">Buy eBook</button>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <h2>About Us</h2>
+  <p>Rodrisa Ray helps young people learn digital marketing, technology, and critical thinking through interactive and engaging methods. We focus on building real skills for the digital world.</p>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="service"><i class="fas fa-chart-line"></i><h3>SEO & Marketing</h3></div>
+  <div class="service"><i class="fas fa-code"></i><h3>Web Development</h3></div>
+  <div class="service"><i class="fas fa-bullhorn"></i><h3>Social Media</h3></div>
+  <div class="service"><i class="fas fa-lightbulb"></i><h3>Consulting</h3></div>
+</section>
+
+<!-- Portfolio -->
+<section class="portfolio" id="portfolio">
+  <img src="https://via.placeholder.com/300x200?text=Project+1" alt="Project 1">
+  <img src="https://via.placeholder.com/300x200?text=Project+2" alt="Project 2">
+  <img src="https://via.placeholder.com/300x200?text=Project+3" alt="Project 3">
+  <img src="https://via.placeholder.com/300x200?text=Project+4" alt="Project 4">
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonial">
+    <p>"Rodrisa Ray taught me to think critically and grow online!"</p>
+    <h4>- Student A</h4>
+  </div>
+  <div class="testimonial">
+    <p>"Amazing mentorship and digital marketing guidance."</p>
+    <h4>- Student B</h4>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+  <div class="pricing-card">
+    <h3>Basic</h3>
+    <p>$49</p>
+    <button onclick="window.open('YOUR_PCLOUD_EBOOK_LINK','_blank')">Buy Now</button>
+  </div>
+  <div class="pricing-card">
+    <h3>Pro</h3>
+    <p>$99</p>
+    <button onclick="window.open('YOUR_PCLOUD_EBOOK_LINK','_blank')">Buy Now</button>
+  </div>
+  <div class="pricing-card">
+    <h3>Premium</h3>
+    <p>$149</p>
+    <button onclick="window.open('YOUR_PCLOUD_EBOOK_LINK','_blank')">Buy Now</button>
+  </div>
+</section>
+
+<!-- Contact / Zapier Form -->
+<section id="contact">
+  <h2>Contact & Buy eBook</h2>
+  <form id="buy" method="POST" action="YOUR_ZAPIER_WEBHOOK_URL">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="4" placeholder="Message"></textarea>
+    <button type="submit">Submit / Buy Now</button>
+  </form>
+
+  <h3 style="margin-top:3rem;">Our Trello Workflow</h3>
+  <iframe src="https://trello.com/b/YOUR_TRELLO_BOARD_ID.html" style="height:500px;"></iframe>
+
+  <h3 style="margin-top:3rem;">Marketing Dashboard</h3>
+  <iframe src="YOUR_LOOKER_STUDIO_EMBED_URL" style="height:600px;"></iframe>
+</section>
+
+<!-- Social Links -->
+<div class="socials">
+  <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+  <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Rodrisa Ray. All rights reserved.</p>
+</footer>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_MEASUREMENT_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'YOUR_GA4_MEASUREMENT_ID');
+</script>
+
+<!-- Particles.js Config -->
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80 },
+    "size": { "value": 3 },
+    "color": { "value": "#0ff" },
+    "line_linked": { "enable": true, "distance": 150, "color": "#0ff", "opacity": 0.4, "width": 1 },
+    "move": { "enable": true, "speed": 2 }
+  }
+});
+</script>
+
+<!-- Scroll Fade-in -->
+<script>
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.2 });
+sections.forEach(section => observer.observe(section));
+</script>
+
+<!-- Confetti on CTA -->
+<script>
+document.querySelectorAll('.cta, .pricing-card button').forEach(btn=>{
+  btn.addEventListener('click',()=>{ confetti({ particleCount:100, spread:70, origin:{y:0.6} }); });
+});
+</script>
+
+<!-- Zapier Form Submission -->
+<script>
+document.getElementById('buy').addEventListener('submit', function(e){
+  e.preventDefault();
+  const form = this;
+  fetch(form.action, { method:'POST', body:new FormData(form) })
+  .then(()=>{ alert('Thank you! Your submission has been sent.'); form.reset(); })
+  .catch(()=>{ alert('Submission failed. Please try again.'); });
+});
+</script>
+
+</body>
+</html>

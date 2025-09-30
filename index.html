@@ -27,7 +27,8 @@ section.visible{opacity:1;transform:translateY(0);}
 .services{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;}
 .service{background: rgba(255,255,255,0.05);padding:2rem;border-radius:15px;width:250px;text-align:center;transition: transform 0.3s;}
 .service:hover{transform:translateY(-10px);}
-.service i{font-size:2.5rem;margin-bottom:1rem;color:#0ff;}
+.service i{font-size:2.5rem;margin-bottom:1rem;color:#0ff;animation:float 2s infinite alternate;}
+@keyframes float{0%{transform:translateY(0);}100%{transform:translateY(-10px);}}
 .portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
 .portfolio img{width:100%;border-radius:15px;transition: transform 0.3s;}
 .portfolio img:hover{transform:scale(1.05);}
@@ -99,11 +100,11 @@ footer{text-align:center;padding:2rem;background: rgba(0,0,0,0.8);margin-top:5re
 <section class="pricing" id="pricing">
   <div class="pricing-card">
     <h3>Basic</h3><p>$49</p>
-    <button onclick="window.open('https://u.pcloud.link/publink/show?code=EXAMPLE1','_blank')">Buy Now</button>
+    <button onclick="window.open('YOUR_PCLOUD_EBOOK_LINK','_blank')">Buy Now</button>
   </div>
   <div class="pricing-card">
     <h3>Pro</h3><p>$99</p>
-    <button onclick="window.open('https://u.pcloud.link/publink/show?code=EXAMPLE2','_blank')">Buy Now</button>
+    <button onclick="window.open('YOUR_PCLOUD_EBOOK_LINK','_blank')">Buy Now</button>
   </div>
 </section>
 
@@ -167,6 +168,5 @@ document.getElementById('buy').addEventListener('submit', function(e){
     .catch(()=>{ alert('❌ Submission failed. Try again.'); });
 });
 </script>
-
 </body>
 </html>
